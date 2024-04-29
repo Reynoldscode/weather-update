@@ -11,6 +11,14 @@ header{
   color: aliceblue; 
 }
 
+#result{
+  background-image: url(./images/weatherbg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: .4s;
+  background-size: cover;
+ 
+}
 input{
   width: 300px;
   border-radius: 10px;
@@ -19,7 +27,10 @@ input{
   background-color: rgb(249, 251, 251);
   border-color: rgb(22, 35, 35);
 }
-
+#displayCity{
+  font-size: 35px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 .card-deck {
   display: flex;
   flex-wrap: nowrap;
@@ -31,6 +42,27 @@ input{
   flex: 1;
 }
 
+.user-history-item {
+  margin-bottom: 10px;
+}
+
+.user-history-item span {
+  margin-right: 10px;
+}
+
+#userHistory {
+  flex-wrap: wrap;
+}
+
+#userHistory button {
+  flex: 1 1 0%;
+  margin: 5px;
+}
+
+#rain{
+  width: 50px;
+  height: 50px;
+}
 footer{
   display: flex ;
   justify-content: center;

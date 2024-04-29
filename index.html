@@ -24,24 +24,28 @@
     <div class="row">
       <div class="column col-3" gy-1>
         <h2>Search for a City:</h2>
-        <input type="search" placeholder="New York" class="mb-3"/>
-        <input class="btn btn-primary mb-3" type="submit" value="Submit">
-      </div>
-      <div class="column col-9">
-        displays
+        <input id= search type="text" placeholder="Enter City Name" class="mb-3"/>
+        <input id="button" class="btn btn-primary mb-3" type="submit" value="Submit">
       </div>
 
-      <div class="column col-3">
-        <div class="button2">
-          <input id="state1" class="btn btn-primary mb-2 bg-secondary" type="submit" value="New York">
-          <input id="state2" class="btn btn-primary mb-2 bg-secondary" type="submit" value="Seattle">
-          <input id="state3" class="btn btn-primary mb-2 bg-secondary" type="submit" value="Denver">
-          <input id="state4" class="btn btn-primary mb-2 bg-secondary" type="submit" value="San Francisco">
-          <input id="state5" class="btn btn-primary mb-2 bg-secondary" type="submit" value="Austin">
-          <input id="state6" class="btn btn-primary mb-2 bg-secondary" type="submit" value="Chicago">
-          <input id="state7" class="btn btn-primary mb-2 bg-secondary" type="submit" value="Minnesota">
-          <input id="state8" class="btn btn-primary mb-2 bg-secondary" type="submit" value="Texas">
-        </div>
+      <div id="result" class="column col-9">
+        <p id="displayCity"></p>
+        <image id="rain" src="./assets/images/rain.jpg" ></image>
+        <p id ="dueDate"></p>
+        <p id="temp"></p>
+        <p id="wind"></p>
+        <p id="humidity"></p>
+      </div>
+
+      <!-- display bottons of cities -->
+      <div id= "userHistory" class="column col-3">
+        <div class="button2"></div>
+        <div class="button3"></div>
+        <div class="button4"></div>
+        <div class="button5"></div>
+        <div class="button6"></div>
+        <div class="button7"></div>
+        <div class="button8"></div>
       </div>
 
       <div class="column col-9">
@@ -50,10 +54,10 @@
           <div class="card" style="width: 18rem;">
             <div id="day1">
               <ul class="list-group list-group-flush" class="col-2">
-                <li class="list-group-item">date</li>
-                <li class="list-group-item">temp</li>
-                <li class="list-group-item">wind</li>
-                <li class="list-group-item">humidity</li>
+                <li id="dueDate">Date</li>
+                <li class="temp">Temp</li>
+                <li class="wind">Wind</li>
+                <li class="humidity">humidity</li>
               </ul>
             </div>
           </div>
@@ -61,10 +65,10 @@
           <div class="card" style="width: 18rem;">
             <div id="day2">
               <ul class="list-group list-group-flush" class="col-2">
-                <li class="list-group-item">date</li>
-                <li class="list-group-item">temp</li>
-                <li class="list-group-item">wind</li>
-                <li class="list-group-item">humidity</li>
+                <li id="dueDate"></li>
+                <li class="temp"></li>
+                <li class="wind"></li>
+                <li class="humidity"></li>
               </ul>
             </div>
           </div>
@@ -72,10 +76,10 @@
           <div class="card" style="width: 18rem;">
             <div id="day3">
               <ul class="list-group list-group-flush" class="col-2">
-                <li class="list-group-item">date</li>
-                <li class="list-group-item">temp</li>
-                <li class="list-group-item">wind</li>
-                <li class="list-group-item">humidity</li>
+                <li id="dueDate"></li>
+                <li class="temp"></li>
+                <li class="wind"></li>
+                <li class="humidity"></li>
               </ul>
             </div>
           </div>
@@ -83,10 +87,10 @@
           <div class="card" style="width: 18rem;">
             <div id="day4">
               <ul class="list-group list-group-flush" class="col-2">
-                <li class="list-group-item">date</li>
-                <li class="list-group-item">temp</li>
-                <li class="list-group-item">wind</li>
-                <li class="list-group-item">humidity</li>
+                <li id="dueDate">date</li>
+                <li class="temp"></li>
+                <li class="wind"></li>
+                <li class="humidity"></li>
               </ul>
             </div>
           </div>
@@ -94,14 +98,13 @@
           <div class="card" style="width: 18rem;">
             <div id="day5">
               <ul class="list-group list-group-flush" class="col-2">
-                <li class="list-group-item">date</li>
-                <li class="list-group-item">temp</li>
-                <li class="list-group-item">wind</li>
-                <li class="list-group-item">humidity</li>
+                <li id="dueDate"></li>
+                <li class="tepm"></li>
+                <li class="wind"></li>
+                <li class="humidity"></li>
               </ul>
             </div>
           </div>
-
         </div>
       </div>
     </div>
@@ -111,29 +114,11 @@
       &copy; 2024 Reynolds Addy.
      </p>
   </footer>
-</body>
-  
 
- 
-
-
-  
-
-
-
-
-  
-
-
-
-
-
-
+  <script
+  src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js" integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <script src="./main.js"></script>
-
-  <!-- Your own JS script tags go here  -->
-
+  <script src="./assets/main.js"></script>
 </body>
 </html>
