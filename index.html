@@ -30,7 +30,6 @@
 
       <div id="result" class="column col-9">
         <p id="displayCity"></p>
-        <image id="rain" src="./assets/images/rain.jpg" ></image>
         <p id ="dueDate"></p>
         <p id="temp"></p>
         <p id="wind"></p>
@@ -48,71 +47,45 @@
         <div class="button8"></div>
       </div>
 
-      <div class="column col-9">
-        <h3>5-Day Forecast:</h3>
-        <div class="card-deck">
-          <div class="card" style="width: 18rem;">
-            <div id="day1">
-              <ul class="list-group list-group-flush" class="col-2">
-                <li id="dueDate">Date</li>
-                <li class="temp">Temp</li>
-                <li class="wind">Wind</li>
-                <li class="humidity">humidity</li>
-              </ul>
-            </div>
-          </div>
+      <div id="card1" class="card" style="width: 18rem;">
+        <p class="card-text">Date:</p>
+        <p class="card-text">Temp:</p>
+        <p class="card-text">Wind:</p>
+        <p class="card-text">humidity</p>
+      </div>
 
-          <div class="card" style="width: 18rem;">
-            <div id="day2">
-              <ul class="list-group list-group-flush" class="col-2">
-                <li id="dueDate"></li>
-                <li class="temp"></li>
-                <li class="wind"></li>
-                <li class="humidity"></li>
-              </ul>
-            </div>
-          </div>
+      <div id="card2" class="card" style="width: 18rem;">
+        <p class="card-text">Date:</p>
+        <p class="card-text">Temp:</p>
+        <p class="card-text">Wind:</p>
+        <p class="card-text">humidity</p>
+      </div>
 
-          <div class="card" style="width: 18rem;">
-            <div id="day3">
-              <ul class="list-group list-group-flush" class="col-2">
-                <li id="dueDate"></li>
-                <li class="temp"></li>
-                <li class="wind"></li>
-                <li class="humidity"></li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="card" style="width: 18rem;">
-            <div id="day4">
-              <ul class="list-group list-group-flush" class="col-2">
-                <li id="dueDate">date</li>
-                <li class="temp"></li>
-                <li class="wind"></li>
-                <li class="humidity"></li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="card" style="width: 18rem;">
-            <div id="day5">
-              <ul class="list-group list-group-flush" class="col-2">
-                <li id="dueDate"></li>
-                <li class="tepm"></li>
-                <li class="wind"></li>
-                <li class="humidity"></li>
-              </ul>
-            </div>
+      <div id="card3" class="card" style="width: 18rem;">
+        <p class="card-text">Date:</p>
+        <p class="card-text">Temp:</p>
+        <p class="card-text">Wind:</p>
+        <p class="card-text">humidity</p>
+      </div>
+      <div id="card4" class="card" style="width: 18rem;">
+        <p class="card-text">Date:</p>
+        <p class="card-text">Temp:</p>
+        <p class="card-text">Wind:</p>
+        <p class="card-text">humidity</p>
+      </div>
+      <div id="card5" class="card" style="width: 18rem;">
+        <p class="card-text">Date:</p>
+        <p class="card-text">Temp:</p>
+        <p class="card-text">Wind:</p>
+        <p class="card-text">humidity</p>
+      </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <footer>
-    <p class="footer">
-      &copy; 2024 Reynolds Addy.
-     </p>
+  <footer class="fixed-bottom bg-black p-3 text-center">
+    <p class="footer"> &copy; 2024 Reynolds Addy.</p>
   </footer>
 
   <script
@@ -120,5 +93,6 @@
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="./assets/main.js"></script>
+  <script src="./assets/five_day.js"></script>
 </body>
 </html>

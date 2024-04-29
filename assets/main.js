@@ -11,12 +11,11 @@ const searchBtn = document.getElementById("button");
 const userHistory = document.getElementById("userHistory");
 const userHistoryWrapper = document.getElementById("userHistoryWrapper");
 const image = document.getElementById("icon");
-
 const today = dayjs();
 const formattedDate = today.format('MM/D/YYYY');
 dueDate.textContent += ` ${formattedDate}`;
-
 const searchHistory = [];
+let lastSearchedCity = '';
 
 function getWeather(city){
   const requestUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=7cfdc0648fd66403977fd3d7982f1618&units=imperial`
@@ -36,9 +35,7 @@ function fetchWeather(city) {
   const requestUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=7cfdc0648fd66403977fd3d7982f1618&units=imperial`
   fetch(requestUrl)
     .then(function(resp){ return resp.json(); })
-    .then(function(data){
-      return data;
-    })
+    .then(function(data){ return data; })
     .catch(function(error){ console.error(error); })
 }
 
@@ -46,9 +43,9 @@ function displaySearchResult(data) {
   const resultHTML = `
     <h2>Search Result for ${data.name}</h2>
     <p>City: <span id="displayCity">${data.name}</span></p>
-    <p>Temperature: <span id="temp">${Math.round(data.temp)}°F</span></p>
-    <p>Wind: <span id="wind">${Math.round(data.wind)} mph</span></p>
-    <p>Humidity: <span id="humidity">${Math.round(data.humidity)}%</span></p>
+    <p>Temperature: <span id="temp">${Math.round(data.main.temp)}°F</span></p>
+    <p>Wind: <span id="wind">${Math.round(data.wind.speed)} mph</span></p>
+    <p>Humidity: <span id="humidity">${Math.round(data.main.humidity)}%</span></p>
     <p>Date: <span id="dueDate">${formattedDate}</span></p>
   `;
   displayResult.innerHTML = resultHTML;
@@ -62,9 +59,7 @@ function storeUserHistory() {
       const newButton = document.createElement("button");
       newButton.className = "btn btn-primary mb-2 bg-secondary";
       newButton.innerHTML = city;
-      newButton.onclick = function() {
-        getWeather(city);
-      };
+      newButton.onclick = function() { getWeather(city); };
       userHistory.appendChild(newButton);
     });
   }
@@ -89,6 +84,14 @@ function displayAllData() {
       });
     });
   }
+  getWeather(lastSearchedCity);
+}
+
+function displayLastSearchedCity() {
+  const lastSearchedCity = localStorage.getItem("lastSearchedCity");
+  if (lastSearchedCity) {
+    getWeather(lastSearchedCity);
+  }
 }
 
 searchBtn.addEventListener("click", (e) => {
@@ -99,14 +102,13 @@ searchBtn.addEventListener("click", (e) => {
     return;
   }
   getWeather(city);
+  lastSearchedCity = city;
+  localStorage.setItem("lastSearchedCity", lastSearchedCity);
   const newButton = document.createElement("button");
   newButton.className = "btn btn-primary mb-2 bg-secondary";
   newButton.innerHTML = city;
-  newButton.onclick = function() {
-    getWeather(city);
-  };
+  newButton.onclick = function() { getWeather(city); };
   userHistory.appendChild(newButton);
-
   searchHistory.push(city);
   localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
   retrieveUserHistory();
@@ -115,4 +117,5 @@ searchBtn.addEventListener("click", (e) => {
 document.addEventListener("DOMContentLoaded", function () {
   storeUserHistory();
   displayAllData();
+  displayLastSearchedCity();
 });
