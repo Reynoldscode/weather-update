@@ -60,6 +60,23 @@ input{
   margin: 5px;
 }
 
+#temp{
+  font-size: 15pxpx;
+  font-weight: bold;
+}
+#wind{
+  font-size: 15px;
+  font-weight: bold;
+}
+#dueDate{
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#humidity{
+  font-size: 15px;
+  font-weight: bold;
+}
 #rain{
   width: 50px;
   height: 50px;
