@@ -1,19 +1,19 @@
 
 
-const displayResult = document.querySelector("#result");
+const searchInput = document.getElementById("search");
+const searchBtn = document.getElementById("button");
+const userHistory = document.getElementById("userHistory");
+const userHistoryWrapper = document.getElementById("userHistoryWrapper");
 const cityName = document.querySelector("#displayCity");
 const cityTemp = document.querySelector("#temp");
 const cityWind = document.querySelector("#wind");
 const cityHumidity = document.querySelector("#humidity");
 const dueDate = document.getElementById("dueDate");
-const searchInput = document.getElementById("search");
-const searchBtn = document.getElementById("button");
-const userHistory = document.getElementById("userHistory");
-const userHistoryWrapper = document.getElementById("userHistoryWrapper");
-const image = document.getElementById("icon");
+
 const today = dayjs();
 const formattedDate = today.format('MM/D/YYYY');
 dueDate.textContent += ` ${formattedDate}`;
+
 const searchHistory = [];
 let lastSearchedCity = '';
 
@@ -22,12 +22,15 @@ function getWeather(city){
   fetch(requestUrl)
     .then(function(resp){ return resp.json(); })
     .then(function(data){
-      cityName.innerHTML = data.name;
-      console.log(data.name)
-      cityTemp.innerHTML = `Temp: ${data.main.temp}°F`;
-      cityWind.innerHTML = `Wind: ${data.wind.speed}MPH`;
-      cityHumidity.innerHTML = `Humidity: ${data.main.humidity}%`;
-      localStorage.setItem('result', JSON.stringify(cityTemp, cityWind, cityHumidity))
+      if (data.cod === "404") {
+        alert("City not found! Please enter a valid city name.");
+      } else {
+        cityName.innerHTML = data.name;
+        console.log(data.name)
+        cityTemp.innerHTML = `Temp: ${data.main.temp}°F`;
+        cityWind.innerHTML = `Wind: ${data.wind.speed} MPH`;
+        cityHumidity.innerHTML = `Humidity: ${data.main.humidity}%`;
+      }
     })
     .catch(function(error){ console.error(error); })
 }
@@ -53,19 +56,6 @@ function retrieveUserHistory() {
     searchHistory.push(button.innerHTML);
   });
   localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
-}
-
-function displayAllData() {
-  const storedHistory = localStorage.getItem("searchHistory");
-  if (storedHistory) {
-    const historyArray = JSON.parse(storedHistory);
-    historyArray.forEach((city) => {
-      fetchWeather(city).then((data) => {
-        displaySearchResult(data);
-      });
-    });
-  }
-  getWeather(lastSearchedCity);
 }
 
 function displayLastSearchedCity() {
@@ -97,6 +87,5 @@ searchBtn.addEventListener("click", (e) => {
 
 document.addEventListener("DOMContentLoaded", function () {
   storeUserHistory();
-  displayAllData();
   displayLastSearchedCity();
 });
