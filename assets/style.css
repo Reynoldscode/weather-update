@@ -61,7 +61,7 @@ input{
 }
 
 #temp{
-  font-size: 15pxpx;
+  font-size: 15px;
   font-weight: bold;
 }
 #wind{
@@ -69,7 +69,7 @@ input{
   font-weight: bold;
 }
 #dueDate{
-  font-size: 15px;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -100,6 +100,10 @@ input{
 #card5{
   background-color: rgb(10, 10, 55);
   color: aliceblue;
+}
+.icons{
+  height: 50px;
+  width: 50px;
 }
 
 p.footer{

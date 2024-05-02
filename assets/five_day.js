@@ -48,7 +48,9 @@ function fetchAndPopulateData() {
   forecastBtn.addEventListener("click", function() {
     const city = forecastInput.value;
     for (let i = 1; i <= 5; i++) {
-      fetch( `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=7cfdc0648fd66403977fd3d7982f1618&units=imperial`)
+
+      
+      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=7cfdc0648fd66403977fd3d7982f1618&units=imperial`)
         .then(response => response.json())
         .then(data => {
           const cityElement = document.getElementById(`city${i}`);
