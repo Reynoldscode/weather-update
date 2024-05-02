@@ -24,4 +24,8 @@ for 5 days
 this is my repo : https://github.com/Reynoldscode/weather-update
 
 this is my web deployment:
+
+
+![image](https://github.com/Reynoldscode/weather-update/assets/41800514/0d64e759-778c-496e-b569-ace573343f2c)
+
 - 
